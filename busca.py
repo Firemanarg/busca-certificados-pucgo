@@ -71,7 +71,8 @@ def end_progress():
 
 
 def load_events():
-    start_progress("Carregando eventos")
+    print("Carregando eventos...")
+    start_progress("Progresso")
     events = list_events()
     end_progress()
     print("Eventos carregados!")
@@ -86,6 +87,7 @@ def search_in_events(events):
 
     EVENTS_COUNT = len(events)
     count = 1
+    print("Buscando certificados...")
     start_progress("Progresso")
     for event in events:
         download_link = find_name_on_page(event["id"])
