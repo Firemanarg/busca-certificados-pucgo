@@ -13,6 +13,7 @@ name = ""
 filters = []
 download_links = []
 progress_x = 0
+search_began = False
 
 
 def list_events():
@@ -141,20 +142,34 @@ def display_results():
 def main():
     global name
     global download_links
+    global search_began
 
     try:
         print_header()
         get_inputs()
+        search_began = True
         events = load_events()
         search_in_events(events)
     except KeyboardInterrupt:
-        end_progress()
-        print("Busca interrompida pelo usuário.")
+        if search_began:
+            end_progress()
+            print("Busca interrompida pelo usuário.")
+        else:
+            print()
+            print()
+            print("Programa interrompido pelo usuário.")
     except Exception as e:
-        print("Ocorreu um erro durante a busca:", e)
-    print("Busca finalizada!")
-    print()
-    display_results()
+        if search_began:
+            end_progress()
+            print("Ocorreu um erro durante a busca:", e)
+        else:
+            print("Ocorreu um erro:", e)
+    if search_began:
+        print("Busca finalizada!")
+        print()
+        display_results()
+    else:
+        print("Programa finalizado!")
 
         
 main()
