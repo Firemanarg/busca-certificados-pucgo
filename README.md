@@ -1,4 +1,4 @@
-# Busca Certificados PUCGO
+# Buscador de Certificados PUCGO
 Script buscador de certificados, criado com o intuito de facilitar a busca no terrível [site de certificados da PUCGO](https://sites.pucgoias.edu.br/certificados/).
 
 # Sumário
