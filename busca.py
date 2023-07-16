@@ -170,6 +170,8 @@ def main():
         display_results()
     else:
         print("Programa finalizado!")
+    print()
+    input("Pressione ENTER para sair...")
 
         
 main()
